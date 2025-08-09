@@ -5,14 +5,79 @@ const messages = [
     text: "Hi there!",
     user: "Amando",
     bgColor: "yellow",
-    added: new Date()
+    date: new Date()
   },
   {
-    text: "Hello World!",
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
     user: "Charles",
     bgColor: "red",
-    added: new Date()
-  }
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7 Hello World! mu name is rasool and my github is: mutuopia7Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },{
+    text: "Hello World! mu name is rasool and my github is: mutuopia7",
+    user: "Charles",
+    bgColor: "red",
+    date: new Date()
+  },
 ];
 
 module.exports = messages;

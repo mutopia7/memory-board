@@ -1,25 +1,27 @@
-<!-- layout.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Memory Board</title>
 </head>
 
 <body>
-    <ul>
-        <% messages.forEach(element=> { %>
-            <li style="background-color:<%= element.bgColor %>">
-                <strong>
-                    <%= element.user %>:
-                </strong>
-                <%= element.text %>
-            </li>
-            <% }); %>
-    </ul>
+    <main class="board">
+        <header class="head">
+            <h1>Messages</h1>
+            <button>add</button>
+        </header>
+        <section>
+            <ul class="messages">
+                <% messages.forEach(message => { %>
+                        <%- include("../messages/list", {message: message}) %>
+                <% }); %>
+            </ul>
+        </section>
+    </main>
 </body>
 
 </html>
