@@ -1,8 +1,12 @@
+//app.js
+
 const express = require('express');
 const app = express();
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const path = require('node:path');
+
+const indexRouter = require("./routes/index")
 
 
 // Security
@@ -33,9 +37,7 @@ const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
 
-app.get('/', (req,res) => {
-    res.render('layouts/layout', {message: "Hello"})
-})
+app.use('/', indexRouter)
 
 const PORT = process.env.PORT || 3000;
 
