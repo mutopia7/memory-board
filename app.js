@@ -31,3 +31,14 @@ app.set("view engine", "ejs");
 // serving Static Assets
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
+
+
+app.get('/', (req,res) => {
+    res.render('layouts/layout', {message: "Hello"})
+})
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`listeing on port: ${PORT}`)
+})
