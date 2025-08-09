@@ -1,0 +1,26 @@
+{
+  "name": "memory-board",
+  "version": "1.0.0",
+  "description": "A board to record a memorable sentence from you.",
+  "homepage": "https://github.com/mutopia7/memory-board#readme",
+  "bugs": {
+    "url": "https://github.com/mutopia7/memory-board/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mutopia7/memory-board.git"
+  },
+  "license": "ISC",
+  "author": "Rasool Vahid",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
