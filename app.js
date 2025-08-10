@@ -7,6 +7,7 @@ const rateLimit = require("express-rate-limit");
 const path = require('node:path');
 
 const indexRouter = require("./routes/index")
+const mesageRouter = require("./routes/messageRoutes")
 
 
 // Security
@@ -19,7 +20,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
   max: 100, // Maximum request in this period
 });
-app.use(limiter);
+// app.use(limiter);
 
 // To capture form data and JSON
 app.use(express.json({ limit: "10kb" }));
@@ -36,7 +37,7 @@ app.set("view engine", "ejs");
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
-
+app.use('/detail', mesageRouter)
 app.use('/', indexRouter)
 
 const PORT = process.env.PORT || 3000;

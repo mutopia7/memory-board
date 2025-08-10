@@ -35,7 +35,7 @@ a {
 /* Add underline on hover and focus for better accessibility */
 a:hover,
 a:focus {
-  text-decoration: underline;
+  text-decoration: none;
   outline: none;
 }
 
@@ -122,7 +122,7 @@ img {
 
 .item {
   padding: 20px 15px;
-  border-radius: 12px;
+  border-radius: 2px;
 
   box-shadow:
     3px 7px 10px rgba(0, 0, 0, 0.25),
@@ -159,6 +159,39 @@ img {
   z-index: 100;
 }
 
+.detail{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 4rem; 
+    box-shadow: 0px 2px 10px 2px rgba(26, 24, 24, 0.558);
+    border-radius: 2px;   
+}
+
+.inf{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.backBtn{
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 3ms ease-in;
+}
+
+.backBtn:hover{
+    text-decoration: none;
+    background-color: #222222cf;
+}
+
 @media (max-width: 1068px) {
   .messages {
     grid-template-columns: repeat(3, 1fr);
@@ -170,12 +203,18 @@ img {
   .messages {
     grid-template-columns: repeat(2, 1fr);
   }
+  .detail{
+    padding: 15px;
+  }
 }
 
 
 @media (max-width: 440px) {
   .messages {
     grid-template-columns: 1fr;
+  }
+  .detail{
+    padding: 15px;
   }
 }
 

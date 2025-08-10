@@ -1,5 +1,6 @@
 <!-- list.ejs -->
-
-<li class="item" style="background-color: <%= message.bgColor %> ; --rotate: <%= Math.random().toFixed(2) %>;">
-    <%= message.text %>
-</li>
+<a href="/detail/<%= message.id %>" rel="noopener">
+    <li class="item" style="background-color: <%= message.bgColor %> ; --rotate: <%= Math.random().toFixed(2) %>;">
+        <%= message.text %>
+    </li>
+</a>
