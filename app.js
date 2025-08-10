@@ -39,6 +39,9 @@ app.use(express.static(assetsPath));
 
 app.use('/detail', mesageRouter)
 app.use('/', indexRouter)
+app.use((req,res) => {
+    res.status(404).render("layouts/404")
+})
 
 const PORT = process.env.PORT || 3000;
 
