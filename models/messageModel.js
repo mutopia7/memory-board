@@ -21,7 +21,7 @@ const messages = [
     bgColor: "skyBlue",
     id: 3,
     date: new Date()
-  },
+  }
 ];
 
 module.exports = messages;
