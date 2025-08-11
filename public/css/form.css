@@ -108,7 +108,7 @@ body{
     margin-top: 20px;
 }
 
-.btnGroup button{
+.btnGroup button,a{
     text-align: center;
     width: 100%;
     color: white;
@@ -122,6 +122,11 @@ body{
 }
 
 .btnGroup button:hover{
+    text-decoration: none;
+    background-color: #222222cf;
+}
+
+.btnGroup a:hover{
     text-decoration: none;
     background-color: #222222cf;
 }

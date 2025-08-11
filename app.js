@@ -21,7 +21,7 @@ const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 min
   max: 100, // Maximum request in this period
 });
-// app.use(limiter);
+app.use(limiter);
 
 // To capture form data and JSON
 app.use(express.json({ limit: "10kb" }));

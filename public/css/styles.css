@@ -6,7 +6,8 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  box-sizing: border-box;
+  /* Include padding and border in element's total width and height */
 }
 
 /* Set base font properties and background color for the html element */
@@ -16,14 +17,17 @@ html {
   font-size: 16px;
   line-height: 1.4;
   color: #222;
-  -webkit-font-smoothing: antialiased; /* Improve font rendering on WebKit */
-  -moz-osx-font-smoothing: grayscale;  /* Improve font rendering on Firefox */
+  -webkit-font-smoothing: antialiased;
+  /* Improve font rendering on WebKit */
+  -moz-osx-font-smoothing: grayscale;
+  /* Improve font rendering on Firefox */
 }
 
 /* Set base styles for body */
 body {
   min-height: 100vh;
-  text-rendering: optimizeSpeed; /* Optimize text rendering for speed */
+  text-rendering: optimizeSpeed;
+  /* Optimize text rendering for speed */
 }
 
 /* Remove default styles from links */
@@ -39,9 +43,14 @@ a:focus {
   outline: none;
 }
 
-h1,h2,h3,h4,h5,h6{
-    margin: 0px;
-    padding: 0px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Remove default list styles */
@@ -55,7 +64,8 @@ button {
   background: none;
   border: none;
   cursor: pointer;
-  font: inherit; /* Inherit font styles for consistency */
+  font: inherit;
+  /* Inherit font styles for consistency */
 }
 
 /* Style form inputs and textareas */
@@ -65,7 +75,8 @@ textarea {
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0.5em;
-  resize: vertical; /* Allow vertical resizing only */
+  resize: vertical;
+  /* Allow vertical resizing only */
 }
 
 /* Make images responsive */
@@ -78,7 +89,7 @@ img {
 /* main style */
 
 .board {
-  min-height: 100vh;  
+  min-height: 100vh;
   padding: 2rem;
   background: #f0e6d2;
   box-shadow: inset 0 0 20px #d1c4a1;
@@ -98,8 +109,8 @@ img {
 }
 
 .head a {
-  padding: 0.5rem 1rem;
-  background-color: #4a90e2;
+  padding: 0.5rem 3rem;
+  background-color: #222;
   border: none;
   color: white;
   font-weight: bold;
@@ -109,14 +120,15 @@ img {
 }
 
 .head a:hover {
-  background-color: #357ABD;
+  background-color: #222222bc;
 }
 
 .messages {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem 1.5rem;
-  perspective: 1200px; /* for 3d depth */
+  perspective: 1200px;
+  /* for 3d depth */
 }
 
 
@@ -130,7 +142,7 @@ img {
   color: #333;
   font-weight: 400;
   font-size: 1.3rem;
-  
+
 
   transform-style: preserve-3d;
   transform: rotateX(3deg) rotateY(calc(-5deg + 10deg * var(--rotate))) rotateZ(calc(-3deg + 6deg * var(--rotate)));
@@ -158,52 +170,70 @@ img {
   z-index: 100;
 }
 
-.item a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 15px 20px;
-    cursor: grab;
+.item a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 15px 20px;
+  cursor: grab;
+
+  white-space: normal;
+  /* اجازه میده متن به خطوط بعدی بره */
+  word-wrap: break-word;
+  /* شکستن کلمات بلند */
+  overflow-wrap: break-word;
+  /* استاندارد جدید برای شکستن کلمات */
 }
 
-.detail{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem 4rem; 
-    box-shadow: 0px 2px 10px 2px rgba(26, 24, 24, 0.558);
-    border-radius: 2px;   
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 4rem;
+  box-shadow: 0px 2px 10px 2px rgba(26, 24, 24, 0.558);
+  border-radius: 2px;
 }
 
-.inf{
-    font-size: 1.3rem;
-    font-weight: 500;
+.detail .inf {
+  white-space: pre-wrap;
+  /* preserve line breaks and wrap text */
+  word-wrap: break-word;
+  /* allow breaking long words */
+  overflow-wrap: break-word;
+  /* for new expelorer */
+  hyphens: auto;
+  /* جاهایی که ممکنه کلمه رو بشکنه */
 }
 
-.backBtn{
-    text-align: center;
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 500;
-    background-color: #222;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background-color 3ms ease-in;
+.inf {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-.backBtn:hover{
-    text-decoration: none;
-    background-color: #222222cf;
+.backBtn {
+  text-align: center;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 3ms ease-in;
 }
 
-.notFound{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.backBtn:hover {
+  text-decoration: none;
+  background-color: #222222cf;
+}
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 1068px) {
@@ -217,7 +247,8 @@ img {
   .messages {
     grid-template-columns: repeat(2, 1fr);
   }
-  .detail{
+
+  .detail {
     padding: 15px;
   }
 }
@@ -227,11 +258,14 @@ img {
   .messages {
     grid-template-columns: 1fr;
   }
-  .detail{
+
+  .detail {
     padding: 15px;
   }
+
+  .head {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 }
-
-
-
-

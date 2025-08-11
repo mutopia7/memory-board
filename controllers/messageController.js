@@ -7,11 +7,6 @@ const controller = {
 
     detailRender: (req, res) => {
         const id = req.params.messageId;
-        console.log(id)
-        console.log(messages.find((m) => m.id === id));
-        console.log(messages)
-
-
         const message = messages.find((m) => m.id == id);
 
         if (!message) {
@@ -28,8 +23,8 @@ const controller = {
     postForm: (req,res) => {
         const user = req.body.user;
         const text = req.body.text;
-        messages.push({user,text,id: crypto.randomUUID(), date: new Date()});
-        console.log(messages)
+        const bgColor = req.body.bgColor;
+        messages.push({user,text,bgColor, id: crypto.randomUUID(), date: new Date()});
         res.redirect("/")
     }
 };
