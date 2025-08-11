@@ -97,7 +97,7 @@ img {
   color: #333;
 }
 
-.head button {
+.head a {
   padding: 0.5rem 1rem;
   background-color: #4a90e2;
   border: none;
@@ -108,7 +108,7 @@ img {
   transition: background-color 0.3s ease;
 }
 
-.head button:hover {
+.head a:hover {
   background-color: #357ABD;
 }
 

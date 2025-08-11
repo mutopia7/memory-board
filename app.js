@@ -6,8 +6,9 @@ const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
 const path = require('node:path');
 
-const indexRouter = require("./routes/index")
-const mesageRouter = require("./routes/messageRoutes")
+const indexRouter = require("./routes/index");
+const mesageRouter = require("./routes/messageRoutes");
+const formRouter = require("./routes/formRouter")
 
 
 // Security
@@ -37,6 +38,7 @@ app.set("view engine", "ejs");
 const assetsPath = path.join(__dirname, "public");
 app.use(express.static(assetsPath));
 
+app.use('/new', formRouter)
 app.use('/detail', mesageRouter)
 app.use('/', indexRouter)
 app.use((req,res) => {

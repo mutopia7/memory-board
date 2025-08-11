@@ -15,6 +15,9 @@ const controller = {
         }
 
         res.render("layouts/messageDetail", { message });
+    },
+    formRender: (req,res) => {
+        res.render("layouts/form");
     }
 };
 
