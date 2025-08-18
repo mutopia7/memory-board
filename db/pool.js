@@ -1,12 +1,21 @@
 const { Pool } = require("pg");
 require("dotenv").config();
 
-// All of the following properties should be read from environment variables
-// We're hardcoding them here for simplicity
-module.exports = new Pool({
-    host: process.env.HOST, // or wherever the db is hosted
-    user: process.env.USER,
-    database: process.env.DATABASE,
-    password: "<role_password>",
-    port: process.env.PORT // The default port
-});
+let pool;
+
+if (process.env.DATABASE_URL) {
+    pool = new Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false }
+    });
+} else {
+    pool = new Pool({
+        host: process.env.HOST,
+        user: process.env.USER,
+        password: process.env.PASSWORD,  
+        database: process.env.DATABASE,
+        port: process.env.PORT
+    });
+}
+
+module.exports = pool;

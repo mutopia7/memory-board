@@ -4,6 +4,7 @@ require("dotenv").config()
 
 const { Client } = require("pg");
 
+
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(), -- Unique identifier
@@ -21,13 +22,23 @@ INSERT INTO messages (user_name, text, bg_color) VALUES
 
 async function main() {
   console.log("seeding...");
-  const client = new Client({
-    host: process.env.HOST, // or wherever the db is hosted
-    user: process.env.USER,
-    database: process.env.DATABASE,
-    password: "<role_password>",
-    port: process.env.PORT // The default port
-  });
+  
+  let client;
+  if (process.env.DATABASE_URL) {
+      client = new Client({
+          connectionString: process.env.DATABASE_URL,
+          ssl: { rejectUnauthorized: false }
+      });
+  } else {
+      client = new Client({
+          host: process.env.HOST,
+          user: process.env.USER,
+          password: process.env.PASSWORD,  
+          database: process.env.DATABASE,
+          port: process.env.PORT
+      });
+  }
+
   await client.connect();
   await client.query(SQL);
   await client.end();
