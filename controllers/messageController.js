@@ -31,7 +31,8 @@ async function createMessagePost(req,res) {
         const user_name = req.body.user;
         const text = req.body.text;
         const bg_color = req.body.bgColor;
-        await db.createMessage(user_name, text, bg_color);
+        const date = req.body.date;
+        await db.createMessage(user_name, text, bg_color, date);
         res.redirect("/")
     } catch (err){
         console.error("Error in postForm:", err);

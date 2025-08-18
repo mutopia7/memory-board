@@ -13,9 +13,11 @@
         <h1>Create a message</h1>
         <form method="POST" action="/new" class="form">
             <label for="name">AUTHOR</label>
-            <input type="text" id="name" name="user">
+            <input type="text" id="name" name="user" required>
             <label for="content">CONTENT</label>
-            <input type="text" id="content" name="text">
+            <input type="text" id="content" name="text" required> 
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
             <label for="bgColor">Choose a background color:</label>
             <input type="color" id="bgColor" name="bgColor" value="#ff2356">
             <div class="btnGroup">

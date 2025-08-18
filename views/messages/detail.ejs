@@ -4,6 +4,6 @@
     <h1 style="text-align: center; margin-bottom: 1.3rem;">Message Detail</h1>
     <p>Content: <span class="inf"><%= message.text %> </span></p>
     <p>Author: <span class="inf"><%= message.user_name %> </span></p>
-    <p>Created at: <span class="inf"><%= message.date.toTimeString().split(' ')[0] %> At <%=  message.date.toLocaleDateString("en-GB") %></span></p>
+    <p>Created at: <span class="inf"><%= message.date.toISOString().slice(0,10) %></span></p>
     <a href="/" class="backBtn" rel="noopener" style="color: <%= message.bg_color %>;">GO BACK</a>
 </section>

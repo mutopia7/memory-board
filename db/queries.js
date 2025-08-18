@@ -10,8 +10,8 @@ async function getDetailMessage(id) {
     return rows[0];
 }
 
-async function createMessage(user_name, text, bg_color) {
-    await pool.query("INSERT INTO messages (user_name, text, bg_color) VALUES ($1, $2, $3)", [user_name, text, bg_color])
+async function createMessage(user_name, text, bg_color, date) {
+    await pool.query("INSERT INTO messages (user_name, text, bg_color, date) VALUES ($1, $2, $3, $4)", [user_name, text, bg_color, date])
 }
 
 
