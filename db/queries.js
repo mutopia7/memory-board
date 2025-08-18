@@ -11,7 +11,7 @@ async function getDetailMessage(id) {
 }
 
 async function createMessage(id,user_name, text, bg_color, date) {
-    await pool.query("INSERT INTO messages (user_name, text, bg_color, date) VALUES ($1, $2, $3, $4, $5)", [id,user_name, text, bg_color, date])
+    await pool.query("INSERT INTO messages (id,user_name, text, bg_color, date) VALUES ($1, $2, $3, $4, $5)", [id,user_name, text, bg_color, date])
 }
 
 
