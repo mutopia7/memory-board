@@ -1,9 +1,14 @@
 // messageController.js
 const crypto = require("crypto")
 const messages = require("../models/messageModel");
+const db = require("../db/queries")
+
+async function getMessages(req,res) {
+    const dbMessages = await db.getAllMessages();
+    res.render("layouts/layout", { messages: dbMessages })
+}
 
 const controller = {
-    render: (req, res) => { res.render("layouts/layout", { messages: messages }) },
 
     detailRender: (req, res) => {
         const id = req.params.messageId;
@@ -39,4 +44,7 @@ const controller = {
 
 
 
-module.exports = controller;
+module.exports = {
+    controller,
+    getMessages
+}

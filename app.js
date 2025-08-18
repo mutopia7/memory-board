@@ -8,7 +8,9 @@ const path = require('node:path');
 
 const indexRouter = require("./routes/index");
 const mesageRouter = require("./routes/messageRoutes");
-const formRouter = require("./routes/formRouter")
+const formRouter = require("./routes/formRouter");
+
+require("dotenv").config();
 
 
 // Security
@@ -45,7 +47,7 @@ app.use((req,res) => {
     res.status(404).render("layouts/404")
 })
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PAGEPORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`listeing on port: ${PORT}`)
