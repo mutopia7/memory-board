@@ -8,18 +8,29 @@ async function getMessages(req,res) {
     res.render("layouts/layout", { messages: dbMessages })
 }
 
+async function getDetailMessage(req,res) {
+    const id = req.params.messageId;
+    const message = await db.getDetailMessage(id);
+
+    if (!message) {
+            return res.status(404).render("layouts/404", { id });
+    }
+
+    res.render("layouts/messageDetail", { message });    
+}
+
 const controller = {
 
-    detailRender: (req, res) => {
-        const id = req.params.messageId;
-        const message = messages.find((m) => m.id == id);
+    // detailRender: (req, res) => {
+    //     const id = req.params.messageId;
+    //     const message = messages.find((m) => m.id == id);
 
-        if (!message) {
-            return res.status(404).render("layouts/404", { id });
-        }
+    //     if (!message) {
+    //         return res.status(404).render("layouts/404", { id });
+    //     }
 
-        res.render("layouts/messageDetail", { message });
-    },
+    //     res.render("layouts/messageDetail", { message });
+    // },
 
     formRender: (req, res) => {
         res.render("layouts/form");
@@ -46,5 +57,6 @@ const controller = {
 
 module.exports = {
     controller,
-    getMessages
+    getMessages,
+    getDetailMessage
 }
