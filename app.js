@@ -47,7 +47,7 @@ app.use((req,res) => {
     res.status(404).render("layouts/404")
 })
 
-const PORT = process.env.PAGEPORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`listeing on port: ${PORT}`)
