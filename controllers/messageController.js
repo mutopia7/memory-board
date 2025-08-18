@@ -1,6 +1,5 @@
 // messageController.js
 const crypto = require("crypto")
-const messages = require("../models/messageModel");
 const db = require("../db/queries")
 
 

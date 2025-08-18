@@ -1,8 +1,11 @@
+visit on [Page](https://memory-board-production.up.railway.app/)
+
 
 # Mini Message Board - MVC Project
 
 A simple mini message board application built with Node.js, Express, and EJS using the MVC architecture.  
 Users can view colorful sticky-note style messages and click each note to see detailed information.  
+
 
 ---
 
@@ -14,37 +17,44 @@ Users can view colorful sticky-note style messages and click each note to see de
 - Unique color-coded messages with interactive detail pages  
 - Security best practices including Helmet for HTTP headers and rate limiting  
 - Input validation and error handling (to be added)  
++ Using PostgreSQL for the database
 
 ---
 
 ## Project Structure
 
 ```
-├── app.js               # Main application entry
-├── controllers          # Controllers handle business logic
+├── app.js
+├── controllers
 │   └── messageController.js
-├── middleware           # Custom middleware for validation, errors etc.
+├── db
+│   ├── pool.js
+│   ├── populatedb.js
+│   └── queries.js
+├── merged.txt
+├── middleware
 │   ├── errorHandler.js
 │   └── validateInput.js
-├── models               # Data models (in-memory for now)
-│   └── messageModel.js
-├── public               # Static assets (CSS, JS)
+├── package-lock.json
+├── package.json
+├── public
 │   └── css
+│       ├── form.css
 │       └── styles.css
-        └── form.css
-├── routes               # Express route handlers
+├── README.md
+├── routes
+│   ├── formRouter.js
 │   ├── index.js
 │   └── messageRoutes.js
-└── views                # EJS view templates
+└── views
     ├── layouts
-        └── layout.ejs
-        └── 404.ejs
-        └── form.ejs
-        └── messageDetail.ejs
-        
+    │   ├── 404.ejs
+    │   ├── form.ejs
+    │   ├── layout.ejs
+    │   └── messageDetail.ejs
     └── messages
-        ├── list.ejs
-        └── detail.ejs
+        ├── detail.ejs
+        └── list.ejs
 ```
 
 ## Usage
