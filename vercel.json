@@ -8,13 +8,8 @@
   ],
   "routes": [
     {
-      "src": "/public/(.*)",
-      "dest": "/public/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/app.js"
+      "dest": "app.js"
     }
-  ],
-  "ignore": ["node_modules", ".git", ".github", ".vscode"]
+  ]
 }
